@@ -1,4 +1,15 @@
+.PHONY: test
+
 help:
+	@echo
+	@echo "🍶 FLASK"
+	@echo
+	@echo "flask:       start app"
+	@echo "index:       hit index route"
+	@echo
+	@echo "📊 CODE QUALITY"
+	@echo
+	@echo "test:    	run unit tests"
 	@echo
 	@echo "📦 DEPENDENCIES"
 	@echo
@@ -6,6 +17,15 @@ help:
 	@echo "install:   	install dependencies from requirements.txt"
 	@echo "purge:   	remove any installed pkg *not* in requirements.txt"
 	@echo
+
+flask:
+	source venv/bin/activate; export FLASK_APP=app; export FLASK_ENV=development; flask run
+
+index:
+	open http://localhost:5000
+
+test:
+	pytest app-test.py
 
 freeze:
 	pip freeze > requirements.txt
