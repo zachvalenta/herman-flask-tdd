@@ -4,8 +4,8 @@ help:
 	@echo
 	@echo "🍶 FLASK"
 	@echo
-	@echo "flask:       start app"
-	@echo "index:       hit index route"
+	@echo "flask:    	start app"
+	@echo "index:    	hit index route"
 	@echo
 	@echo "📊 CODE QUALITY"
 	@echo
@@ -19,13 +19,13 @@ help:
 	@echo
 
 flask:
-	source venv/bin/activate; export FLASK_APP=app; export FLASK_ENV=development; flask run
+	source venv/bin/activate; flask run
 
 index:
 	open http://localhost:5000
 
 test:
-	pytest app-test.py
+	pytest -v app-test.py
 
 freeze:
 	pip freeze > requirements.txt
